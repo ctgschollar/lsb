@@ -1,21 +1,26 @@
 <template>
-  <el-container>
-    <el-header height="auto" >
+<div>
+<div class="page-wrap">
+  <el-container >
+    <el-header>
       <Header />
     </el-header>
     <el-main>
        <Main />
     </el-main>
-    <el-footer>
-      FOOTER
-    </el-footer>
   </el-container>
+  </div>
+  <el-footer class="site-footer">
+    <Footer />
+  </el-footer>
+  </div>
 </template>
 
 <script>
 
 import Header from './components/Header'
 import Main from './components/Main'
+import Footer from './components/Footer'
 
 window.mobilecheck = function() {
   var check = false;
@@ -29,6 +34,7 @@ export default {
   components: {
     Header,
     Main,
+    Footer,
   },
   data () {
     return {
@@ -56,6 +62,22 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 500px;
+}
+.site-footer {
+  background: orange;
 }
 
 h1, h2 {

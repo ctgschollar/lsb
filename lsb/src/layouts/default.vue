@@ -27,23 +27,23 @@
       <router-view />
     </q-page-container>
 
-    <q-layout-footer class="bg-primary">
-      <form id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
-        <div class="container row justify-around">
-          <q-datetime inverted class="q-pa" type="date" v-model="date" name="widget_date" id="date_1"/>
-          <q-datetime inverted type="date" name="widget_date_to" v-model="dateTo" id="date_2"/>
-          <input type="hidden" value="d/m/Y" name="date_format">
-          <q-btn class="text-white bg-primary" type="submit" name="bf_submit" label="Check Availability"/>
-          <!--<div class="q-title text-white vertical-middle"> BOOK NOW </div>-->
+    <q-layout-footer >
+      <form id="check_availability" action="https://hotels.cloudbeds.com/booking/reservation/R43szk" method="post">
+          <p class="col_25 date_input"><input name="widget_date" type="text" maxlength="10" value="13/05/2018" class="datepicker_input hasDatepicker" id="date_1"></p>
+          <p class="col_25 date_input"><input name="widget_date_to" type="text" maxlength="10" value="16/05/2018" class="datepicker_input hasDatepicker" id="date_2"></p>
+          <p class="col_25">
+              <input type="hidden" value="d/m/Y" name="date_format">
+              <button type="submit" name="bf_submit" onclick="_gaq.push(['_trackEvent', 'Check Availability', 'Submit']);">Check Availability</button>
+          </p>
+          <p class="col_25" id="price_guarantee"><span>Best price guaranteed!</span></p>
           <div class="clear_floats"></div>
-        </div>
       </form>
     </q-layout-footer>
   </q-layout>
 </template>
 
 <script>
-import { openURL, date } from 'quasar'
+import { openURL } from 'quasar'
 
 export default {
   name: 'LayoutDefault',
@@ -51,9 +51,7 @@ export default {
     return {
       state: true,
       footer: true,
-      header: true,
-      date: new Date(),
-      dateTo: date.addToDate(new Date(), { days: 1 })
+      header: true
     }
   },
   methods: {
@@ -63,13 +61,5 @@ export default {
 </script>
 
 <style>
-
-.cthrough {
-  opacity: 0.8;
-}
-
-.c {
-  opacity: 1;
-}
 
 </style>

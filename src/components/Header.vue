@@ -2,7 +2,7 @@
   <div id="nav">
     <el-row>
       <el-col :span="24">
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu  class="el-menu-demo" mode="horizontal" >
         <el-menu-item index="1">HOME</el-menu-item>
         <el-submenu index="2">
           <template slot="title">BEDS</template>

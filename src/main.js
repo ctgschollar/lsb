@@ -3,7 +3,19 @@ import App from './App.vue'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
+import locale from 'element-ui/lib/locale/lang/en';
+
+import i18n from 'vue-i18n';
+
+
+//Vue.use(i18n);
+Vue.use(ElementUI, { locale });
+
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource);
+
+
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 

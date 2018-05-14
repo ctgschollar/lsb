@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
-    <el-row>
+    <el-row :justify="center">
       <el-col :span="24">
-        <slider animation="fade">
+        <slider height="800px" animation="fade">
           <slider-item v-for="i in list">
             <img :src=i>
           </slider-item>
@@ -15,7 +15,7 @@
       </el-col>
       <el-col :span="span">
         <GmapMap
-          :center="{lat:-33.9252565, lng:18.4143067}"
+          :center="{lat:-33.9252201, lng:18.416315}"
           :zoom="mapZoom"
           map-type-id="terrain"
           :style="'width: '+mapWidth+'px; height: '+mapHeight+'px'"
@@ -62,10 +62,10 @@ export default {
       mapWidth : 500,
       mapHeight : 300,
       mapZoom :15,
-      infoContent: 'Long Street Backpackers',
+      infoContent: '<a href="https://goo.gl/maps/3UMytPjFkJP2">Long Street Backpackers</a>',
       infoWindowPos: {
-        lat:-33.9252565,
-        lng:18.4143067
+        lat:-33.9252201,
+        lng:18.416315
       },
       infoWinOpen: true,
       currentMidx: null,
@@ -73,14 +73,14 @@ export default {
       infoOptions: {
         pixelOffset: {
           width: 0,
-          height: -35
+          height: -5
         }
       },
       markers:[{
         position: {
-          lat:-33.9252565,
-          lng:18.4143067
-        },
+          lat:-33.9252201,
+          lng:18.416315
+          },
       }],
     }
   },
@@ -111,6 +111,10 @@ export default {
   margin-top: 60px;
 }
 
+.slider {
+  height:500px;
+}
+
 .el-container img {
   width:100%;
 }
@@ -121,6 +125,7 @@ export default {
 
 el-col {
   background-size:contain;
+  align-content: center;
 }
 
 h1, h2 {
