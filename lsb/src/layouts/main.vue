@@ -1,0 +1,95 @@
+<template>
+  <q-page class="flex flex-center">
+    <div  class="window-height window-width fill">
+      <img src="statics/First_image.jpg">
+      </img>
+    </div>
+
+    <!-- BLURB -->
+    <div id="blurb" class="row window-height window-width items-center">
+      <div class="col-3">
+      </div>
+      <div class="col-6">
+        <H3 class="text-center">Long Street Backpackers is famous for its friendly and welcoming atmosphere, incredibly lush social spaces, communal activities, free meals and fantastic location. Set in a private oasis in the centre of Long Street there are literally thousands of eating, drinking and partying options right on your doorstep!</H3>
+      </div>
+    </div>
+    <!-- END BLURB -->
+
+    <!-- LOCATION -->
+    <div id="location" class="row window-height window-width justify-center">
+      <div class="row col-4">
+        <div class="col-12">
+          <H4> LOCATION </H4>
+          <p> 209 Long Street, Cape Town</p>
+        </div>
+        <div class="col-12">
+          <p> Centrally Located ...</p>
+        </div>
+        <div class="col-12">
+          Walking distance to
+        </div>
+      </div>
+      <div class="col-6">
+        <iframe
+            width="100%"
+            height="60%"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=Long%20Street%20Backpackers%2C%20Long%20Street%2C%20Cape%20Town%20City%20Centre%2C%20Cape%20Town%2C%20South%20Africa&key=AIzaSyDP2nBSjNH5WBMq9494cbbqOIroRtjxw-w"
+            allowfullscreen>
+          </iframe>
+      </div>
+    </div>
+    <!-- END LOCATION -->
+
+    <q-parallax src="/statics/responsive-testing.png" >
+      <H1> DRINK UP </H1>
+    </q-parallax>
+
+    <!-- FACILITIES -->
+    <div id="facilities" class="row window-height window-width justify-center q-pt-md items-start">
+      <div class="row col-10">
+        <div class="row col-4">
+          <H4 class="q-mt-xl q-ml-lg"> FACILITIES </H4>
+        </div>
+        <div class="row col-8 q-pt-lg">
+          <div class="col-4"><img width="60%" src="statics/icons/001-toast.svg"/></div>
+          <div class="col-4"><img width="60%" src="statics/icons/002-stove.svg"/></div>
+          <div class="col-4"><img width="60%" src="statics/icons/003-lockers.svg"/></div>
+        </div>
+        <div class="row col-12 q-pt-lg">
+          <div class="col-6 fill">
+            <img src="/statics/full_pic.jpg"></img>
+          </div>
+          <div class="col-6">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END FACILITIES -->
+
+
+  </q-page>
+</template>
+
+<style>
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+</style>
+
+<script>
+export default {
+  name: 'page'
+}
+</script>

@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex justify-center">
     <div class="relative-position full">
-      <q-carousel :autoplay="5000" :infinite="true" class="window-height window-width">
+      <q-carousel :autoplay="5000" :infinite="true" class="window-height">
         <q-carousel-slide img-src="statics/room.jpg" w="500" />
         <q-carousel-slide img-src="statics/P4130376.jpg"/>
         <q-carousel-slide img-src="statics/P4130391.jpg"/>
