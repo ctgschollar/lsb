@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div  class="window-height window-width fill">
-      <img src="statics/First_image.jpg">
+      <img src="statics/banner_pic.jpeg">
       </img>
     </div>
 
@@ -43,9 +43,34 @@
     </div>
     <!-- END LOCATION -->
 
-    <q-parallax src="/statics/responsive-testing.png">
+    <q-parallax src="/statics/smaller_mobile.png" :height="500">
       <H1> DRINK UP </H1>
     </q-parallax>
+
+      <!-- FACILITIES -->
+    <div id="facilities" class="row window-height window-width justify-center q-pt-md items-start">
+      <div class="row col-10">
+        <div class="row col-4">
+          <H4 class="q-mt-xl q-ml-lg"> FACILITIES </H4>
+        </div>
+      </div>
+      <div class="row col-10">
+        <div class="row col-8 q-pt-lg">
+          <div class="col-4"><img width="60%" src="statics/icons/001-toast.svg"/></div>
+          <div class="col-4"><img width="60%" src="statics/icons/002-stove.svg"/></div>
+          <div class="col-4"><img width="60%" src="statics/icons/003-lockers.svg"/></div>
+        </div>
+        <div class="row col-12 q-pt-lg">
+          <div class="col-6 fill">
+            <img src="/statics/bar.jpeg"></img>
+          </div>
+          <div class="col-6">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END FACILITIES -->
 
 
   </q-page>
@@ -61,8 +86,8 @@
 }
 .fill img {
     flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
+    max-width: 260%;
+    max-height: 150%
 }
 
 </style>
