@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex flex-center">
     <div class="window-height window-width fill">
-      <img src="statics/banner_pic.jpeg">
+      <img src="statics/banner_pic.jpeg.png">
       </img>
     </div>
 
@@ -17,7 +17,7 @@
 
     <!-- LOCATION -->
     <div id="location" class="row window-height window-width justify-center bg-faded text-white">
-      <div class="row col-xl-8 col-lg-11">
+      <div class="row col-xl-10 col-lg-11">
         <div class="row col-5 text-center">
           <div class="row col-12 justify-center">
             <H2 class="q-mb-none drivein"> LOCATION </H2>
@@ -28,6 +28,9 @@
           <div class="row col-12 justify-center">
             <H4 class="driveinfilled"> Centrally Located </H4>
           </div>
+          <div class="col-12 q-mt-xl">
+            <H4 class="driveinfilled">Walking distance to :</H4>
+          </div>
         </div>
         <div class="col-1"></div>
         <div class="col-6 q-mt-xl q-pt-xl">
@@ -35,15 +38,12 @@
           </div>
           <iframe
               width="100%"
-              height="100%"
+              height="80%"
               frameborder="0"
               style="border:0"
               src="https://www.google.com/maps/embed/v1/place?q=Long%20Street%20Backpackers%2C%20Long%20Street%2C%20Cape%20Town%20City%20Centre%2C%20Cape%20Town%2C%20South%20Africa&key=AIzaSyDP2nBSjNH5WBMq9494cbbqOIroRtjxw-w"
               allowfullscreen>
           </iframe>
-        </div>
-        <div class="col-12 q-mt-xl">
-          <H4 class="driveinfilled">Walking distance to :</H4>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
         </div>
         <div class="row col-12 q-pt-lg">
           <div class="col-5 fill2">
-            <img src="/statics/bar.jpeg"></img>
+            <img src="/statics/bar-mobile.png"></img>
           </div>
           <div class="col-1"></div>
           <div class="row col-6 q-pt-lg">
@@ -75,7 +75,7 @@
             <div class="col-4"><img width="60%" src="statics/icons/008-stove.png"/></div>
             <div class="col-4"><img width="60%" src="statics/icons/009-holiday.png"/></div>
           </div>
-          <div class="col-5 text-center q-pt-sm driveinfilled">Challenge Accepted?</div>
+          <H4 class="col-5 text-center q-pt-sm driveinfilled">Challenge Accepted?</H4>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
     </q-parallax>
 
     <!-- ROOMS -->
-    <div id="rooms" class="row window-height window-width justify-center">
+    <div id="rooms" class="row window-height window-width justify-center items-start">
       <div class="row col-10">
         <div class="row col-12 justify-center">
           <div class="drivein">
