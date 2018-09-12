@@ -3,7 +3,8 @@
     <q-layout-header reveal :reveal-offset="50" class="bg-white">
       <div class="driveinfilled q-mx-lg">
         <div>
-          <H2 class="q-my-md">LONG STREET BACKPAKERS</H2>
+          <H2 v-if="desktop" class="q-my-md">LONG STREET BACKPACKERS</H2>
+          <H4 v-else class="q-my-none">LONG STREET BACKPACKERS</H4>
         </div>
         <div :class="desktop ? 'col-10' : 'col-12'">
           <div class="float-left">
@@ -13,7 +14,7 @@
 
                 <q-datetime color="dark"  flat class="hidden" type="date" name="widget_date_to" v-model="dateTo" id="date_2"/>
                 <input type="hidden" value="d/m/Y" name="date_format">
-                <q-btn color="dark" size="lg" dense flat type="submit" name="bf_submit" label="BOOK NOW"/>
+                <q-btn color="dark" size="xl" dense flat type="submit" name="bf_submit" label="BOOK NOW"/>
                 <!--<div class="q-title text-white vertical-middle"> BOOK NOW </div>-->
                 <div class="clear_floats"></div>
               </div>
@@ -28,20 +29,20 @@
               </div>
             </form>
           </div>
-          <div class="float-right">
-            <q-btn color="dark" dense flat label="Facilities"
+          <div v-if="desktop" class="float-right">
+            <q-btn color="dark" flat label="Facilities"
              @click="scrollToElement('facilities')"
-            :size="facilities ? 'xl' : 'lg'"
+            size="xl"
             @mouseenter.native="facilities = true"
             @mouseleave.native="facilities = false"/>
-            <q-btn color="dark" dense flat label="Location"
+            <q-btn color="dark" flat label="Location"
             @click="scrollToElement('location')"
-            :size="location ? 'xl' : 'lg'"
+            size="xl"
             @mouseenter.native="location = true"
             @mouseleave.native="location = false"/>
-            <q-btn color="dark" dense flat label="Rooms"
+            <q-btn color="dark" flat label="Rooms"
             @click="scrollToElement('rooms')"
-            :size="rooms ? 'xl' : 'lg'"
+            size="xl"
             @mouseenter.native="rooms = true"
             @mouseleave.native="rooms = false"/>
           </div>

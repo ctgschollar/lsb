@@ -24,6 +24,10 @@ module.exports = function (ctx) {
       // analyze: true,
       // extractCSS: false,
       extendWebpack (cfg) {
+        cfg.module.rules.push({
+          test: /\.txt$/,
+          use: 'raw-loader'
+        })
       }
     },
     devServer: {
