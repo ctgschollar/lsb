@@ -1,7 +1,22 @@
 <template>
-  <q-page class="flex flex-center">
-    <q-parallax src="statics/banner_pic.jpeg.png" :height=windowHeight >
+  <q-page class="flex flex-center absolute-top">
+    <q-parallax src="statics/banner_pic.jpeg.png" :height='windowHeight'>
+    <div class="window-width bg-white absolute-bottom">
+      <div>
+        <form id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
+          <div class="container row justify-around">
+          <q-datetime color="dark"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
+          <q-datetime color="dark" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
+          <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
+          <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
+          <input type="hidden" value="d/m/Y" name="date_format">
+          <q-btn type="submit" name="bf_submit" label="BOOK NOW"/>
+          </div>
+        </form>
+      </div>
+    </div>
     </q-parallax>
+
     <!--<div class="window-height window-width fill">
       <img src="statics/banner_pic.jpeg.png">
       </img>
@@ -12,7 +27,7 @@
       <div class="col-2">
       </div>
       <div class="col-8">
-        <H3 class="text-center driveinfilled">{{blurb}}</H3>
+        <H4 class="text-center driveinfilled">{{blurb}}</H4>
       </div>
     </div>
     <!-- END BLURB -->
@@ -26,24 +41,24 @@
         <div class="row col-12 items-stretch" style="height:70%">
           <div class="row col-6 text-center items-stretch">
             <div class="row col-12 justify-center">
-              <div class="row col-12 justify-center">
-                <H4 class="row q-mb-none">209 Long Street, Cape Town</H4>
+              <div class="row col-12">
+                <H5 class="row q-mb-none text-left">209 Long Street, Cape Town</H5>
               </div>
-              <div class="col-12 justify-center q-mx-lg  q-mb-none">
-                <H4> {{location}} </H4>
+              <div class="col-12 justify-center q-mx-lg  q-mb-none text-left">
+                <H5> {{location}} </H5>
               </div>
             </div>
-            <div class="col-12 row q-ml-lg  q-my-none items-center">
-              <H4 class="col-12 q-my-none text-left"> Walking distance from :</H4>
-              <H5 class="col-4 q-ma-none q-pl-md"> Table Mountain </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Bars & Pubs </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Restaurants & cafes </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Museums </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Parks </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Supermarkets </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Yoga Studios </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Galleries </H5>
-              <H5 class="col-4 q-ma-none q-pl-md"> Fashion Boutiques </H5>
+            <div class="col-12 row q-ml-lg  q-my-none items-center text-left">
+              <H5 class="col-12 q-my-none text-left"> Walking distance from :</H5>
+              <H6 class="col-4 q-ma-none q-pl-md"> Table Mountain </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Bars & Pubs </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Restaurants & cafes </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Museums </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Parks </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Supermarkets </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Yoga Studios </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Galleries </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Fashion Boutiques </H6>
             </div>
           </div>
           <div class="col-1"></div>
@@ -65,8 +80,7 @@
     </div>
     <!-- END LOCATION -->
 
-    <q-parallax src="/statics/ismaller.png" :height=700>
-      <H4 class="driveinfilled"> DRINK UP </H4>
+    <q-parallax src="/statics/ismaller.png" :height=windowHeight>
     </q-parallax>
 
     <!-- FACILITIES -->
@@ -118,14 +132,12 @@
               <div class="col-12">The friendliest hostel in Cape Town!</div>
             </div>
           </div>
-          <H5 class="col-xl-5 col-md-4 text-center q-pt-sm driveinfilled">Challenge Accepted?</H5>
         </div>
       </div>
     </div>
     <!-- END FACILITIES -->
 
-    <q-parallax src="/statics/balcony evening.jpeg.png" :height=700 class="q-mt-xl">
-      <H4 class="driveinfilled"> Maybe One More </H4>
+    <q-parallax src="/statics/balcony evening.jpeg.png" :height=windowHeight class="q-mt-xl">
     </q-parallax>
 
     <!-- ROOMS -->
@@ -191,56 +203,56 @@
     </div>
     <!-- END ROOMS -->
 
-    <div class="row window-width items-center  bg-faded text-white">
+    <div class="row window-width items-center window-height bg-black text-white">
       <div class="col-2">
       </div>
       <div class="col-8">
-        <H3 class="text-center driveinfilled q-pt-xl">{{review1}}</H3>
+        <H4 class="text-center driveinfilled q-pt-xl">{{review1}}</H4>
       </div>
     </div>
 
-    <q-parallax src="statics/bar.jpeg.png" :height=600 class="q-pt-xl">
+    <q-parallax src="statics/bar.jpeg.png" :height=windowHeight class="q-pt-xl">
 
     </q-parallax>
 
-    <div class="row window-width items-center">
+    <div class="row window-width window-height items-center">
       <div class="col-2">
       </div>
       <div class="col-8">
-        <H3 class="text-center driveinfilled">{{review2}}</H3>
+        <H4 class="text-center driveinfilled">{{review2}}</H4>
       </div>
     </div>
 
-    <q-parallax src="statics/braai courtyard.jpeg.png" :height=600>
+    <q-parallax src="statics/braai courtyard.jpeg.png" :height=windowHeight>
     </q-parallax>
 
-    <div class="row window-width items-center bg-faded text-white">
+    <div class="row window-width items-center bg-black text-white window-height">
       <div class="col-2">
       </div>
       <div class="col-8">
-        <H3 class="text-center driveinfilled">{{review3}}</H3>
+        <H4 class="text-center driveinfilled">{{review3}}</H4>
       </div>
     </div>
 
-    <q-parallax src="statics/Beer Pong 2.jpg.png" :height=600>
+    <q-parallax src="statics/Beer Pong 2.jpg.png" :height=windowHeight>
     </q-parallax>
 
-    <div class="row window-width items-center">
+    <div class="row window-width items-center window-height">
       <div class="col-2">
       </div>
       <div class="col-8">
-        <H3 class="text-center driveinfilled">{{review4}}</H3>
+        <H4 class="text-center driveinfilled">{{review4}}</H4>
       </div>
     </div>
 
-    <q-parallax src="statics/ismaller.png" :height=600>
+    <q-parallax src="statics/ismaller.png" :height=windowHeight>
     </q-parallax>
 
-    <div class="row window-width items-center bg-faded text-white">
+    <div class="row window-width items-center bg-black text-white window-height">
       <div class="col-2">
       </div>
       <div class="col-8">
-        <H3 class="text-center driveinfilled">{{review5}}</H3>
+        <H4 class="text-center driveinfilled">{{review5}}</H4>
       </div>
     </div>
 
@@ -251,11 +263,11 @@
 <style>
 
 .drivein {
-  font-family: 'driveInShadow';
+  font-family: 'BEBAS';
 }
 
 .driveinfilled {
-  font-family: 'driveInFilled'
+  font-family: 'roman'
 }
 
 .fill {
@@ -300,6 +312,7 @@
 </style>
 
 <script>
+import {date} from 'quasar'
 import blurb from '../statics/text/blurb.txt'
 import location from '../statics/text/Location.txt'
 import review1 from '../statics/text/review1.txt'
@@ -319,7 +332,19 @@ export default {
       review3: review3,
       review4: review4,
       review5: review5,
-      windowHeight: window.innerHeight
+      windowHeight: window.innerHeight,
+      date: date.addToDate(new Date(), { days: 1 }),
+      dateTo: date.addToDate(new Date(), { days: 4 }),
+      dateStr: date.formatDate(date.addToDate(new Date(), { days: 1 }), 'DD/MM/YYYY'),
+      dateToStr: date.formatDate(date.addToDate(new Date(), { days: 4 }), 'DD/MM/YYYY')
+    }
+  },
+  methods: {
+    updateDate (){
+      this.$set(this, 'dateStr', date.formatDate(this.date, 'DD/MM/YYYY'))
+    },
+    updateDateTo (){
+      this.$set(this, 'dateToStr', date.formatDate(this.dateTo, 'DD/MM/YYYY'))
     }
   }
 }
