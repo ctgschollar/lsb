@@ -1,21 +1,40 @@
 <template>
   <q-page class="flex flex-center absolute-top">
-    <q-parallax src="statics/banner_pic.jpeg.png" :height='windowHeight'>
-    <div class="window-width bg-white absolute-bottom">
-      <div>
+    <q-parallax src="statics/banner_pic.jpeg.png" :height='windowHeight - 50'>
+
+    </q-parallax>
+    <div class="row window-width bg-white driveinfilled bg-red items-center" style="height:50px">
+      <div class="col-1"></div>
+      <div class="col-9">
         <form id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
           <div class="container row justify-around">
-          <q-datetime color="dark"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
-          <q-datetime color="dark" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
+          <q-datetime color="black" flat class="q-pr-sm datepicker_input hasDatepicker " type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
+          <q-datetime color="black" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
           <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
           <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
           <input type="hidden" value="d/m/Y" name="date_format">
-          <q-btn type="submit" name="bf_submit" label="BOOK NOW"/>
+          <q-btn id="book" type="submit"  hidden name="bf_submit" label="BOOK NOW"/>
+          <q-btn label="Book Now" dense size="lg" @click='customDialogModel=true'/>
           </div>
+
+          <q-dialog
+            v-model="customDialogModel"
+            class="driveinfilled"
+          >
+            <span slot="title">Before you book</span>
+            <span slot="message" class="text-black">
+              <p>All guests <b>must</b> produce a valid passport on check in.</p>
+              <p>This includes South African Guests.</p>
+              <p><b>No other form of ID will be accepted</b></p></span>
+
+            <template slot="buttons" slot-scope="props">
+              <q-btn color="black"><label for="book">Continue Booking</label></q-btn>
+              <q-btn color="white" class="text-black" label="Cancel" @click="props.cancel" />
+            </template>
+          </q-dialog>
         </form>
       </div>
     </div>
-    </q-parallax>
 
     <!--<div class="window-height window-width fill">
       <img src="statics/banner_pic.jpeg.png">
@@ -145,13 +164,14 @@
       <div class="row col-10">
         <div class="row col-12 justify-center">
           <div class="drivein">
-            <H2 class="drivein"> ROOMS </H2>
+            <H2 class="drivein q-mb-md"> ROOMS </H2>
           </div>
         </div>
-        <!--<div class="col-6">
-        </div>-->
+        <div class="col-12 driveinfilled q-pb-sm">
+        <b>All guests must produce a valid passport on check in. Including South Africans.</b>
+        </div>
 
-        <q-card class="col-sm-4 q-pa-sm">
+        <q-card class="col-sm-4 q-pa-sm ">
           <q-card-media class="fill3">
             <img src="/statics/rooms/single/single1.jpeg">
           </q-card-media>
@@ -203,6 +223,7 @@
     </div>
     <!-- END ROOMS -->
 
+    <!-- REVIEWS -->
     <div class="row window-width items-center window-height bg-black text-white">
       <div class="col-2">
       </div>
@@ -255,7 +276,21 @@
         <H4 class="text-center driveinfilled">{{review5}}</H4>
       </div>
     </div>
+    <!-- END REVIEWS -->
 
+    <!-- CONTACT US -->
+    <div class="row window-width items-center  driveinfilled">
+      <div class="col-1"></div>
+      <div class="col-8 q-pl-xl q-pb-xl">
+        <H6>Contact Us</H6>
+        <p> Phone : +27 (0) 21 423 0615 </p>
+        <p> Email : info@longstreetbackpackers.co.za </p>
+        <p> 209 Long street, Cape Town </p>
+      </div>
+      <div style="height : 100"></div>
+    </div>
+
+    <!-- END CONTACT US -->
 
   </q-page>
 </template>
@@ -323,6 +358,7 @@ import review5 from '../statics/text/review5.txt'
 
 export default {
   name: 'page',
+  props: ['d', 'd2'],
   data: function () {
     return {
       blurb: blurb,
@@ -336,15 +372,35 @@ export default {
       date: date.addToDate(new Date(), { days: 1 }),
       dateTo: date.addToDate(new Date(), { days: 4 }),
       dateStr: date.formatDate(date.addToDate(new Date(), { days: 1 }), 'DD/MM/YYYY'),
-      dateToStr: date.formatDate(date.addToDate(new Date(), { days: 4 }), 'DD/MM/YYYY')
+      dateToStr: date.formatDate(date.addToDate(new Date(), { days: 4 }), 'DD/MM/YYYY'),
+      customDialogModel: false
     }
+  },
+  created() {
+    this.$set(this, 'date', this.d)
+    this.$set(this, 'dateTo', this.d2)
+    this.updateDate()
+    this.updateDateTo()
+  },
+  mounted() {
+    this.$watch('d', d => {
+      this.$set(this, 'date', this.d)
+      this.$set(this, 'dateStr', date.formatDate(this.date, 'DD/MM/YYYY'))
+    })
+
+    this.$watch('d2', d2 => {
+      this.$set(this, 'dateTo', this.d2)
+      this.$set(this, 'dateToStr', date.formatDate(this.dateTo, 'DD/MM/YYYY'))
+    })
   },
   methods: {
     updateDate (){
       this.$set(this, 'dateStr', date.formatDate(this.date, 'DD/MM/YYYY'))
+      this.$emit('d', this.date)
     },
     updateDateTo (){
       this.$set(this, 'dateToStr', date.formatDate(this.dateTo, 'DD/MM/YYYY'))
+      this.$emit('d2', this.dateTo)
     }
   }
 }

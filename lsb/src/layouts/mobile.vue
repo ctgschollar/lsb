@@ -17,7 +17,7 @@
 
     <div id="location">
     <!-- LOCATION LANDSCAPE -->
-    <div id="location" class="row window-width justify-center bg-faded text-white driveinfilled orientation-landscape">
+    <div id="location" class="row window-width justify-center bg-black text-white driveinfilled orientation-landscape">
       <div class="row col-12">
         <div class="row col-12 justify-center">
           <H2 class="q-mb-none drivein"> LOCATION </H2>
@@ -66,8 +66,8 @@
     <!-- END LOCATION LANDSCAPE -->
 
     <!-- LOCATION PORTRAIT -->
-    <div class="row window-width orientation-portrait items-stretch bg-faded text-white">
-      <div class="row text-center window-height">
+    <div class="row window-width orientation-portrait items-stretch bg-black text-white">
+      <div class="row text-center">
         <div class="col-12">
           <H2 class="row drivein justify-center q-mb-none"> LOCATION </H2>
         </div>
@@ -107,12 +107,11 @@
     </div>
 
     <q-parallax src="/statics/smaller_mobile.png" :height="300">
-      <H2 class="driveinfilled"> DRINK UP </H2>
     </q-parallax>
 
     <div id="facilities">
     <!-- FACILITIES LANDSCAPE-->
-    <div class="row justify-center q-pb-xl window-height orientation-landscape driveinfilled">
+    <div class="row justify-center q-pb-xl orientation-landscape driveinfilled">
       <div class="row col-11">
         <div class="row col-12 justify-center">
           <H2  class="drivein"> FACILITIES </H2>
@@ -166,7 +165,7 @@
     <!-- END FACILITIES LANDSCAPE-->
 
     <!-- FACILITIES PORTRAIT-->
-    <div id="facilities" class="row justify-center q-pb-xl window-height orientation-portrait text-center driveinfilled">
+    <div id="facilities" class="row justify-center orientation-portrait text-center driveinfilled">
         <div class="row col-12 justify-center">
           <H2  class="drivein"> FACILITIES </H2>
         </div>
@@ -210,7 +209,6 @@
         </div>
         <div class="col-12 q-pt-lg">
           <q-parallax src="/statics/bar-mobile.png" :height=300>
-            <H4 class="driveinfilled"> CHALLENGE ACCEPTED? </H4>
           </q-parallax>
         </div>
     </div>
@@ -218,12 +216,11 @@
     </div>
 
     <q-parallax src="/statics/leafy_courtyard.png" :height=300 class="q-mt-xl orientation-landscape">
-      <H2 class="driveinfilled"> RECOVER </H2>
     </q-parallax>
 
     <div id="rooms">
     <!-- ROOMS LANDSCAPE-->
-    <div class="row window-height justify-center q-pt-lg  orientation-landscape">
+    <div class="row justify-center q-pb-lg orientation-landscape">
       <div class="row col-12">
         <div class="row col-12 justify-center">
           <div class="drivein">
@@ -286,10 +283,10 @@
     <!-- END ROOMS LANDSCAPE -->
 
     <!-- ROOMS PORTRAIT-->
-    <div id="rooms" class="row window-heightjustify-center q-pt-lg  orientation-portrait">
+    <div id="rooms" class="row justify-center q-pb-lg  orientation-portrait">
       <div class="row col-12">
         <div class="row col-12 justify-center">
-          <div class="drivein">
+          <div class="drivein ">
             <H2 class="drivein"> ROOMS </H2>
           </div>
         </div>
@@ -349,7 +346,8 @@
     <!-- END ROOMS PORTRAIT -->
     </div>
 
-    <div class="row window-width items-center  bg-faded text-white">
+    <!-- REVIEWS -->
+    <div class="row window-width items-center window-height bg-black text-white">
       <div class="col-2">
       </div>
       <div class="col-8">
@@ -357,11 +355,11 @@
       </div>
     </div>
 
-    <q-parallax src="statics/bar.jpeg.png" :height=600 class="q-pt-xl">
+    <q-parallax src="statics/bar.jpeg.png" :height=windowHeight class="q-pt-xl">
 
     </q-parallax>
 
-    <div class="row window-width items-center">
+    <div class="row window-width window-height items-center">
       <div class="col-2">
       </div>
       <div class="col-8">
@@ -369,10 +367,10 @@
       </div>
     </div>
 
-    <q-parallax src="statics/braai courtyard.jpeg.png" :height=600>
+    <q-parallax src="statics/braai courtyard.jpeg.png" :height=windowHeight>
     </q-parallax>
 
-    <div class="row window-width items-center bg-faded text-white">
+    <div class="row window-width items-center bg-black text-white window-height">
       <div class="col-2">
       </div>
       <div class="col-8">
@@ -380,10 +378,10 @@
       </div>
     </div>
 
-    <q-parallax src="statics/Beer Pong 2.jpg.png" :height=600>
+    <q-parallax src="statics/Beer Pong 2.jpg.png" :height=windowHeight>
     </q-parallax>
 
-    <div class="row window-width items-center">
+    <div class="row window-width items-center window-height">
       <div class="col-2">
       </div>
       <div class="col-8">
@@ -391,16 +389,30 @@
       </div>
     </div>
 
-    <q-parallax src="statics/ismaller.png" :height=600>
+    <q-parallax src="statics/ismaller.png" :height=windowHeight>
     </q-parallax>
 
-    <div class="row window-width items-center bg-faded text-white">
+    <div class="row window-width items-center bg-black text-white window-height">
       <div class="col-2">
       </div>
       <div class="col-8">
         <H4 class="text-center driveinfilled">{{review5}}</H4>
       </div>
     </div>
+    <!-- END REVIEWS -->
+
+    <!-- CONTACT US -->
+    <div class="row window-width items-center  driveinfilled">
+      <div class="col-8 q-pl-xl q-pb-xl">
+        <H4 class="drivein">Contact Us</H4>
+        <p> +27 (0) 21 423 0615 </p>
+        <p> info@longstreetbackpackers.co.za </p>
+        <p> 209 Long street, Cape Town </p>
+      </div>
+      <div style="height : 100"></div>
+    </div>
+
+    <!-- END CONTACT US -->
 
   </q-page>
   </template>
@@ -408,11 +420,11 @@
 <style>
 
 .drivein {
-  font-family: 'driveInShadow';
+  font-family: 'BEBAS';
 }
 
 .driveinfilled {
-  font-family: 'driveInFilled'
+  font-family: 'roman'
 }
 
 .fill {

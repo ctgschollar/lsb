@@ -1,60 +1,174 @@
 <template>
-  <q-layout view="hhh lpr FFF">
-    <q-layout-header reveal :reveal-offset="windowHeight + 100" class="bg-white" >
-      <div class="driveinfilled q-mx-lg" ref="header">
-        <div>
-          <H2 v-if="desktop" class="q-my-md">LONG STREET BACKPACKERS</H2>
-          <H4 v-else class="q-my-none">LONG STREET BACKPACKERS</H4>
-        </div>
-        <div :class="desktop ? 'col-10' : 'col-12'">
-          <div v-if="windowHeight - windowScroll < headerHeight * 2" class="float-left">
-            <form v-if="desktop" id="check_availability" action="https://hotels.cloudbeds.com/booking/reservation/A9p5sR" method="post">
-              <div class="container row justify-around">
-                <q-datetime color="dark"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
-                <q-datetime color="dark" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
-                <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
-                <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
-                <input type="hidden" value="d/m/Y" name="date_format">
-                <q-btn type="submit" name="bf_submit" label="BOOK NOW" color="dark" flat dense size="xl"/>
-              </div>
-            </form>
-            <form v-else id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
-              <div class="container row justify-around">
-                <q-datetime color="dark"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
-                <q-datetime color="dark" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
-                <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
-                <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
-                <input type="hidden" value="d/m/Y" name="date_format">
-                <q-btn type="submit" name="bf_submit" label="BOOK NOW" color="dark" flat dense/>
-              </div>
-            </form>
+  <div>
+    <q-layout v-if='desktop' view="hhh lpr FFF">
+      <q-layout-header reveal :reveal-offset="windowHeight + 150" class="bg-white" >
+        <div class="driveinfilled q-mx-lg" ref="header">
+          <div>
+            <H2 class="q-my-md">LONG STREET BACKPACKERS</H2>
           </div>
-          <div v-if="desktop" class="float-right">
-            <q-btn color="dark" flat label="Facilities"
+            <div v-if="windowHeight - windowScroll < headerHeight * 2" class="float-left">
+              <form id="check_availability" action="https://hotels.cloudbeds.com/booking/reservation/A9p5sR" method="post">
+                <div class="container row justify-around">
+                  <q-datetime color="black"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
+                  <q-datetime color="black" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
+                  <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
+                  <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
+                  <input type="hidden" value="d/m/Y" name="date_format">
+                  <q-btn type="submit" hidden name="bf_submit" label="BOOK NOW" class="bg-black" text-color="white" flat dense size="xl" id="book"/>
+                  <q-btn label="Book Now" class="bg-black" text-color="white" flat dense size="xl" @click='customDialogModel=true'/>
+                  <q-dialog
+                    v-model="customDialogModel"
+                    class="driveinfilled"
+                  >
+                    <span slot="title">Before you book</span>
+                    <span slot="message" class="text-black">
+                      <p>All guests <b>must</b> produce a valid passport on check in.</p>
+                      <p>This includes South African Guests.</p>
+                      <p><b>No other form of ID will be accepted</b></p></span>
+
+                    <template slot="buttons" slot-scope="props">
+                      <q-btn color="black"><label for="book">Continue Booking</label></q-btn>
+                      <q-btn color="white" class="text-black" label="Cancel" @click="props.cancel" />
+                    </template>
+                  </q-dialog>
+                </div>
+              </form>
+            </div>
+            <div class="float-right">
+              <q-btn color="dark" flat label="Facilities"
+               @click="scrollToElement('facilities')"
+              size="xl" class="q-pb-md"
+              @mouseenter.native="facilities = true"
+              @mouseleave.native="facilities = false"/>
+              <q-btn color="dark" flat label="Location"
+              @click="scrollToElement('location')"
+              size="xl" class="q-pb-md"
+              @mouseenter.native="location = true"
+              @mouseleave.native="location = false"/>
+              <q-btn color="dark" flat label="Rooms"
+              @click="scrollToElement('rooms')"
+              size="xl" class="q-pb-md"
+              @mouseenter.native="rooms = true"
+              @mouseleave.native="rooms = false"/>
+            </div>
+        </div>
+      </q-layout-header>
+
+      <q-page-container>
+        <router-view :d='date' :d2='dateTo' @d='setDate' @d2='setDateTo'/>
+      </q-page-container>
+
+      <q-btn
+        v-if='windowScroll > 500'
+        round
+        color="dark"
+        v-back-to-top.animate="{offset: 500, duration: 500}"
+        class="fixed"
+        style="right: 18px; bottom: 18px"
+      >
+        <q-icon name="arrow_upward" />
+      </q-btn>
+
+    </q-layout>
+    <q-layout v-else view="hhh lpr fFf">
+      <q-layout-header reveal :reveal-offset="150" class="bg-white" >
+        <div class="driveinfilled q-mx-lg row" ref="header">
+          <div class="col-4">
+            <H5 class="q-my-none">LONG STREET BACKPACKERS</H5>
+          </div>
+          <div  class="col-8 orientation-landscape row items-end justify-end">
+            <q-btn color="dark" dense flat label="Facilities"
              @click="scrollToElement('facilities')"
-            size="xl"
+            size="md" class="q-pb-md float-right"
             @mouseenter.native="facilities = true"
             @mouseleave.native="facilities = false"/>
-            <q-btn color="dark" flat label="Location"
+            <q-btn color="dark" dense flat label="Location"
             @click="scrollToElement('location')"
-            size="xl"
+            size="md" class="q-pb-md float-right"
             @mouseenter.native="location = true"
             @mouseleave.native="location = false"/>
-            <q-btn color="dark" flat label="Rooms"
+            <q-btn color="dark" dense flat label="Rooms"
             @click="scrollToElement('rooms')"
-            size="xl"
+            size="md" class="q-pb-md float-right"
             @mouseenter.native="rooms = true"
             @mouseleave.native="rooms = false"/>
           </div>
+          <div class="col-8 orientation-portrait column">
+            <div class="">
+            <q-btn color="dark" flat label="Facilities"
+             @click="scrollToElement('facilities')"
+            size="md" class="float-right"
+            @mouseenter.native="facilities = true"
+            @mouseleave.native="facilities = false"/>
+            </div>
+            <div>
+            <q-btn color="dark" flat label="Location"
+            @click="scrollToElement('location')"
+            size="md" class="float-right"
+            @mouseenter.native="location = true"
+            @mouseleave.native="location = false"/>
+            </div>
+            <div>
+            <q-btn color="dark" flat label="Rooms"
+            @click="scrollToElement('rooms')"
+            size="md" class=" float-right"
+            @mouseenter.native="rooms = true"
+            @mouseleave.native="rooms = false"/>
+            </div>
+          </div>
         </div>
-      </div>
-    </q-layout-header>
+      </q-layout-header>
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
+      <q-page-container>
+        <router-view :d='date' :d2='dateTo' @d='setDate' @d2='setDateTo'/>
+      </q-page-container>
 
-  </q-layout>
+      <q-layout-footer class="bg-white driveinfilled" style="opacity:0.7" reveal :reveal-offset="150">
+        <div v-if="windowScroll < windowHeight/3" class="row justify-end bg-red">
+          <b>BOOK NOW</b>
+          <q-icon name="arrow_downward" class="q-pr-lg"/>
+        </div>
+        <form id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
+          <div class="container row justify-around">
+            <q-datetime color="black"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
+            <q-datetime color="black" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
+            <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
+            <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
+            <input type="hidden" value="d/m/Y" name="date_format">
+            <q-btn type="submit" hidden name="bf_submit" label="BOOK NOW" class="bg-black" text-color="white" flat dense size="xl" id="book"/>
+            <q-btn icon="event" class="bg-black" text-color="white" flat dense size="xl" @click='customDialogModel=true'/>
+            <q-dialog
+              v-model="customDialogModel"
+              class="driveinfilled"
+            >
+              <span slot="title">Before you book</span>
+              <span slot="message" class="text-black">
+                <p>All guests <b>must</b> produce a valid passport on check in.</p>
+                <p>This includes South African Guests.</p>
+                <p><b>No other form of ID will be accepted</b></p></span>
+
+              <template slot="buttons" slot-scope="props">
+                <q-btn color="black"><label for="book">Continue Booking</label></q-btn>
+                <q-btn color="white" class="text-black" label="Cancel" @click="props.cancel" />
+              </template>
+            </q-dialog>
+          </div>
+        </form>
+      </q-layout-footer>
+
+      <q-btn
+        v-if='windowScroll > 500'
+        round
+        color="black"
+        v-back-to-top.animate="{offset: 500, duration: 500}"
+        class="fixed"
+        style="right: 18px; bottom: 60px; opacity:0.7"
+      >
+        <q-icon name="arrow_upward" />
+      </q-btn>
+
+    </q-layout>
+  </div>
 </template>
 
 <script>
@@ -79,8 +193,8 @@ export default {
       rooms: false,
       windowHeight: window.innerHeight,
       windowScroll: window.scrollY,
-      headerHeight: 0
-
+      headerHeight: 0,
+      customDialogModel: false
     }
   },
   created() {
@@ -96,6 +210,14 @@ export default {
     this.$set(this, 'headerHeight', this.$refs['header'].clientHeight)
   },
   methods: {
+    setDate (date){
+      this.$set(this, 'date', date)
+      this.updateDate()
+    },
+    setDateTo (dateTo){
+      this.$set(this, 'dateTo', dateTo)
+      this.updateDateTo()
+    },
     updateDate (){
       this.$set(this, 'dateStr', date.formatDate(this.date, 'DD/MM/YYYY'))
     },

@@ -45,6 +45,7 @@ module.exports = function (ctx) {
         'QCardSeparator',
         'QCardActions',
         'QDatetime',
+        'QDialog',
         'QLayout',
         'QLayoutHeader',
         'QLayoutFooter',
@@ -63,10 +64,12 @@ module.exports = function (ctx) {
         'QParallax',
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'BackToTop'
       ],
       // Quasar plugins
       plugins: [
+        'Dialog',
         'Notify'
       ]
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'

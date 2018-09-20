@@ -7,8 +7,8 @@ const routes = [
     component: () => import('layouts/MyLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: 'main', component: () => import('layouts/main.vue') },
-      { path: 'mobile', component: () => import('layouts/mobile.vue') }
+      { path: 'main', component: () => import('layouts/main.vue'), props: true},
+      { path: 'mobile', component: () => import('layouts/mobile.vue'), props: true }
     ]
   },
 ]
