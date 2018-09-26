@@ -3,7 +3,7 @@
     <q-parallax src="statics/banner_pic.jpeg.png" :height='windowHeight - 50'>
 
     </q-parallax>
-    <div class="row window-width bg-white driveinfilled bg-red items-center" style="height:50px">
+    <div class="row window-width bg-white drivein bg-red items-center" style="height:50px">
       <div class="col-1"></div>
       <div class="col-9">
         <form id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
@@ -52,7 +52,7 @@
     <!-- END BLURB -->
 
     <!-- LOCATION -->
-    <div id="location" class="row window-height window-width justify-center bg-faded text-white driveinfilled">
+    <div id="location" class="row window-height window-width justify-center bg-faded text-white drivein">
       <div class="row col-xl-10 col-lg-11">
         <div class="row col-12 justify-center">
           <H2 class="q-mb-none drivein"> LOCATION </H2>
@@ -103,7 +103,7 @@
     </q-parallax>
 
     <!-- FACILITIES -->
-    <div id="facilities" class="row q-pb-xl items-start window-width driveinfilled">
+    <div id="facilities" class="row q-pb-xl items-start window-width drivein">
       <div class="row col-12">
         <div class="row col-12 justify-center">
           <H2  class="drivein"> FACILITIES </H2>
@@ -160,22 +160,22 @@
     </q-parallax>
 
     <!-- ROOMS -->
-    <div id="rooms" class="row window-width justify-center items-start q-mb-xl">
+    <div id="rooms" class="row window-width justify-center items-start q-mb-xl drivein">
       <div class="row col-10">
         <div class="row col-12 justify-center">
           <div class="drivein">
             <H2 class="drivein q-mb-md"> ROOMS </H2>
           </div>
         </div>
-        <div class="col-12 driveinfilled q-pb-sm">
-        <b>All guests must produce a valid passport on check in. Including South Africans.</b>
+        <div class="col-12 q-pb-sm">
+        All guests must produce a valid <b>passport</b> on check in. Including South Africans.
         </div>
 
         <q-card class="col-sm-4 q-pa-sm ">
           <q-card-media class="fill3">
             <img src="/statics/rooms/single/single1.jpeg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
+          <q-card-title>
             Single Room
           </q-card-title>
         </q-card>
@@ -183,7 +183,7 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/twin/twin1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
+          <q-card-title>
             Twin Room
           </q-card-title>
         </q-card>
@@ -191,7 +191,7 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/dorm_14/dorm_14_1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
+          <q-card-title>
             Double Room
           </q-card-title>
         </q-card>
@@ -199,7 +199,7 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/dorm_15/dorm_15_1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
+          <q-card-title>
             4 Bed Dorm
           </q-card-title>
         </q-card>
@@ -207,7 +207,7 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/16first/16first1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
+          <q-card-title>
             6 Bed Room
           </q-card-title>
         </q-card>
@@ -215,7 +215,7 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/16second/16second1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
+          <q-card-title>
             10 Bed Room
           </q-card-title>
         </q-card>

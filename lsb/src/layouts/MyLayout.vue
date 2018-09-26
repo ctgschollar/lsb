@@ -2,55 +2,74 @@
   <div>
     <q-layout v-if='desktop' view="hhh lpr FFF">
       <q-layout-header reveal :reveal-offset="windowHeight + 150" class="bg-white" >
-        <div class="driveinfilled q-mx-lg" ref="header">
-          <div>
-            <H2 class="q-my-md">LONG STREET BACKPACKERS</H2>
+        <div class="drivein row q-mx-lg" ref="header">
+          <div class="col-2 q-pa-md">
+            <img src='statics/logo.png'>
           </div>
-            <div v-if="windowHeight - windowScroll < headerHeight * 2" class="float-left">
-              <form id="check_availability" action="https://hotels.cloudbeds.com/booking/reservation/A9p5sR" method="post">
-                <div class="container row justify-around">
-                  <q-datetime color="black"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
-                  <q-datetime color="black" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
-                  <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
-                  <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
-                  <input type="hidden" value="d/m/Y" name="date_format">
-                  <q-btn type="submit" hidden name="bf_submit" label="BOOK NOW" class="bg-black" text-color="white" flat dense size="xl" id="book"/>
-                  <q-btn label="Book Now" class="bg-black" text-color="white" flat dense size="xl" @click='customDialogModel=true'/>
-                  <q-dialog
-                    v-model="customDialogModel"
-                    class="driveinfilled"
-                  >
-                    <span slot="title">Before you book</span>
-                    <span slot="message" class="text-black">
-                      <p>All guests <b>must</b> produce a valid passport on check in.</p>
-                      <p>This includes South African Guests.</p>
-                      <p><b>No other form of ID will be accepted</b></p></span>
+          <div class="row col-10">
+          <div v-if="windowHeight - windowScroll < headerHeight * 2" class="col-md-12 col-lg-6 q-pb-md row items-end justify-end">
+            <form id="check_availability" action="https://hotels.cloudbeds.com/booking/reservation/A9p5sR" method="post">
+              <div class="container row justify-around">
+                <q-datetime color="black"  flat class="q-pr-sm datepicker_input hasDatepicker" type="date" v-model="date" name="widget_date" id="date_1" @change="updateDate"/>
+                <q-datetime color="black" flat type="date" class="datepicker_input hasDatepicker" name="widget_date_to" v-model="dateTo" id="date_2" @change="updateDateTo"/>
+                <input name="widget_date" type="hidden" maxlength="10" :value="dateStr" class="datepicker_input hasDatepicker" id="date_1">
+                <input name="widget_date_to" type="hidden" maxlength="10" :value="dateToStr" class="datepicker_input hasDatepicker" id="date_2">
+                <input type="hidden" value="d/m/Y" name="date_format">
+                <q-btn type="submit" hidden name="bf_submit" label="BOOK NOW" class="bg-black" text-color="white" flat dense size="xl" id="book"/>
+                <q-btn label="Book Now" class="bg-black" text-color="white" flat dense size="xl" @click='customDialogModel=true'/>
+                <q-dialog
+                  v-model="customDialogModel"
+                  class="driveinfilled"
+                >
+                  <span slot="title">Before you book</span>
+                  <span slot="message" class="text-black">
+                    <p>All guests <b>must</b> produce a valid passport on check in.</p>
+                    <p>This includes South African Guests.</p>
+                    <p><b>No other form of ID will be accepted</b></p></span>
 
-                    <template slot="buttons" slot-scope="props">
-                      <q-btn color="black"><label for="book">Continue Booking</label></q-btn>
-                      <q-btn color="white" class="text-black" label="Cancel" @click="props.cancel" />
-                    </template>
-                  </q-dialog>
-                </div>
-              </form>
-            </div>
-            <div class="float-right">
-              <q-btn color="dark" flat label="Facilities"
-               @click="scrollToElement('facilities')"
-              size="xl" class="q-pb-md"
-              @mouseenter.native="facilities = true"
-              @mouseleave.native="facilities = false"/>
-              <q-btn color="dark" flat label="Location"
-              @click="scrollToElement('location')"
-              size="xl" class="q-pb-md"
-              @mouseenter.native="location = true"
-              @mouseleave.native="location = false"/>
-              <q-btn color="dark" flat label="Rooms"
-              @click="scrollToElement('rooms')"
-              size="xl" class="q-pb-md"
-              @mouseenter.native="rooms = true"
-              @mouseleave.native="rooms = false"/>
-            </div>
+                  <template slot="buttons" slot-scope="props">
+                    <q-btn color="black"><label for="book">Continue Booking</label></q-btn>
+                    <q-btn color="white" class="text-black" label="Cancel" @click="props.cancel" />
+                  </template>
+                </q-dialog>
+              </div>
+            </form>
+          </div>
+          <div v-if="windowHeight - windowScroll < headerHeight * 2" class="col-md-12 col-lg-6 row items-end justify-end">
+            <q-btn color="dark" flat label="Facilities"
+             @click="scrollToElement('facilities')"
+            size="xl" class="q-pb-md"
+            @mouseenter.native="facilities = true"
+            @mouseleave.native="facilities = false"/>
+            <q-btn color="dark" flat label="Location"
+            @click="scrollToElement('location')"
+            size="xl" class="q-pb-md"
+            @mouseenter.native="location = true"
+            @mouseleave.native="location = false"/>
+            <q-btn color="dark" flat label="Rooms"
+            @click="scrollToElement('rooms')"
+            size="xl" class="q-pb-md"
+            @mouseenter.native="rooms = true"
+            @mouseleave.native="rooms = false"/>
+          </div>
+          <div v-else class="col-12 row items-end justify-end">
+            <q-btn color="dark" flat label="Facilities"
+             @click="scrollToElement('facilities')"
+            size="xl" class="q-pb-md"
+            @mouseenter.native="facilities = true"
+            @mouseleave.native="facilities = false"/>
+            <q-btn color="dark" flat label="Location"
+            @click="scrollToElement('location')"
+            size="xl" class="q-pb-md"
+            @mouseenter.native="location = true"
+            @mouseleave.native="location = false"/>
+            <q-btn color="dark" flat label="Rooms"
+            @click="scrollToElement('rooms')"
+            size="xl" class="q-pb-md"
+            @mouseenter.native="rooms = true"
+            @mouseleave.native="rooms = false"/>
+          </div>
+          </div>
         </div>
       </q-layout-header>
 
@@ -72,49 +91,32 @@
     </q-layout>
     <q-layout v-else view="hhh lpr fFf">
       <q-layout-header reveal :reveal-offset="150" class="bg-white" >
-        <div class="driveinfilled q-mx-lg row" ref="header">
-          <div class="col-4">
-            <H5 class="q-my-none">LONG STREET BACKPACKERS</H5>
+        <div class="driveinfilled row" ref="header">
+          <div class="col-9 q-pl-sm q-py-sm">
+            <img src='statics/logo.png'>
           </div>
-          <div  class="col-8 orientation-landscape row items-end justify-end">
-            <q-btn color="dark" dense flat label="Facilities"
-             @click="scrollToElement('facilities')"
-            size="md" class="q-pb-md float-right"
-            @mouseenter.native="facilities = true"
-            @mouseleave.native="facilities = false"/>
-            <q-btn color="dark" dense flat label="Location"
-            @click="scrollToElement('location')"
-            size="md" class="q-pb-md float-right"
-            @mouseenter.native="location = true"
-            @mouseleave.native="location = false"/>
-            <q-btn color="dark" dense flat label="Rooms"
-            @click="scrollToElement('rooms')"
-            size="md" class="q-pb-md float-right"
-            @mouseenter.native="rooms = true"
-            @mouseleave.native="rooms = false"/>
-          </div>
-          <div class="col-8 orientation-portrait column">
-            <div class="">
-            <q-btn color="dark" flat label="Facilities"
-             @click="scrollToElement('facilities')"
-            size="md" class="float-right"
-            @mouseenter.native="facilities = true"
-            @mouseleave.native="facilities = false"/>
-            </div>
-            <div>
-            <q-btn color="dark" flat label="Location"
-            @click="scrollToElement('location')"
-            size="md" class="float-right"
-            @mouseenter.native="location = true"
-            @mouseleave.native="location = false"/>
-            </div>
-            <div>
-            <q-btn color="dark" flat label="Rooms"
-            @click="scrollToElement('rooms')"
-            size="md" class=" float-right"
-            @mouseenter.native="rooms = true"
-            @mouseleave.native="rooms = false"/>
-            </div>
+          <div class="row items-start col-3 justify-end">
+            <q-btn flat icon="menu" class="driveinfilled">
+              <q-popover>
+                <q-list separator link class="q-py-none">
+                  <q-item v-close-overlay @click.native="doSomething">
+                    <q-btn color="dark" flat label="Facilities"
+                        @click="scrollToElement('facilities')"
+                        size="md" class="driveinfilled"/>
+                  </q-item>
+                  <q-item v-close-overlay @click.native="doSomething">
+                        <q-btn color="dark" flat label="Location"
+                        @click="scrollToElement('location')"
+                        size="md" class="driveinfilled"/>
+                  </q-item>
+                   <q-item v-close-overlay @click.native="doSomething">
+                        <q-btn color="dark" flat label="Rooms"
+                        @click="scrollToElement('rooms')"
+                        size="md" class="driveinfilled"/>
+                  </q-item>
+                </q-list>
+              </q-popover>
+            </q-btn>
           </div>
         </div>
       </q-layout-header>
@@ -194,7 +196,8 @@ export default {
       windowHeight: window.innerHeight,
       windowScroll: window.scrollY,
       headerHeight: 0,
-      customDialogModel: false
+      customDialogModel: false,
+      nav: true
     }
   },
   created() {

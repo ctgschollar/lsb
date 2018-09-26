@@ -52,6 +52,7 @@ module.exports = function (ctx) {
         'QLayoutDrawer',
         'QPageContainer',
         'QPage',
+        'QPopover',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
@@ -65,7 +66,8 @@ module.exports = function (ctx) {
       ],
       directives: [
         'Ripple',
-        'BackToTop'
+        'BackToTop',
+        'CloseOverlay'
       ],
       // Quasar plugins
       plugins: [

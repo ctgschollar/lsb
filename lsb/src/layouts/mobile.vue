@@ -72,13 +72,13 @@
           <H2 class="row drivein justify-center q-mb-none"> LOCATION </H2>
         </div>
         <div class="col-12">
-          <H4 class="driveinfilled q-my-none"> 209 Long Street, Cape Town</H4>
+          <H4 class="driveinfilled q-mb-none"> 209 Long Street, Cape Town</H4>
         </div>
         <div class="col-12 driveinfilled ">
-          <H4 class="q-my-none"> {{location}}</H4>
+          <H4 class="q-mb-none"> {{location}}</H4>
         </div>
         <div class="col-12 row q-my-none items-center driveinfilled">
-          <H4 class="col-12 q-my-none"> Walking distance from</H4>
+          <H4 class="col-12"> Walking distance from</H4>
           <H5 class="col-6 q-ma-none q-pl-md"> Table Mountain </H5>
           <H5 class="col-6 q-ma-none q-pl-md"> Bars & Pubs </H5>
           <H5 class="col-6 q-ma-none q-pl-md"> Restaurants & cafes </H5>
