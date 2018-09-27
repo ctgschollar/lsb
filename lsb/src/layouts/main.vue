@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center absolute-top">
-    <q-parallax src="statics/banner_pic.jpeg.png" :height='windowHeight - 50'>
+    <q-parallax src="statics/images/balcony evening.jpg" :height='windowHeight - 50'>
 
     </q-parallax>
     <div class="row window-width bg-white drivein bg-red items-center" style="height:50px">
@@ -36,11 +36,6 @@
       </div>
     </div>
 
-    <!--<div class="window-height window-width fill">
-      <img src="statics/banner_pic.jpeg.png">
-      </img>
-    </div>-->
-
     <!-- BLURB -->
     <div id="blurb" class="row window-height window-width items-center">
       <div class="col-2">
@@ -52,12 +47,12 @@
     <!-- END BLURB -->
 
     <!-- LOCATION -->
-    <div id="location" class="row window-height window-width justify-center bg-faded text-white drivein">
+    <div id="location" class="row window-height window-width justify-center bg-black text-white driveinfilled">
       <div class="row col-xl-10 col-lg-11">
         <div class="row col-12 justify-center">
           <H2 class="q-mb-none drivein"> LOCATION </H2>
         </div>
-        <div class="row col-12 items-stretch" style="height:70%">
+        <div class="row col-12 items-stretch" style="height:65%">
           <div class="row col-6 text-center items-stretch">
             <div class="row col-12 justify-center">
               <div class="row col-12">
@@ -67,11 +62,11 @@
                 <H5> {{location}} </H5>
               </div>
             </div>
-            <div class="col-12 row q-ml-lg  q-my-none items-center text-left">
+            <div class="col-12 row q-my-none items-center text-left">
               <H5 class="col-12 q-my-none text-left"> Walking distance from :</H5>
               <H6 class="col-4 q-ma-none q-pl-md"> Table Mountain </H6>
               <H6 class="col-4 q-ma-none q-pl-md"> Bars & Pubs </H6>
-              <H6 class="col-4 q-ma-none q-pl-md"> Restaurants & cafes </H6>
+              <H6 class="col-4 q-ma-none q-pl-md"> Restaurants & Cafes </H6>
               <H6 class="col-4 q-ma-none q-pl-md"> Museums </H6>
               <H6 class="col-4 q-ma-none q-pl-md"> Parks </H6>
               <H6 class="col-4 q-ma-none q-pl-md"> Supermarkets </H6>
@@ -92,25 +87,25 @@
             </iframe>
           </div>
         </div>
-        <div class="row col-12 justify-center text-center">
+        <div class="row col-12 justify-center q-py-xl text-center">
           <H5>If you’d like to arrange an airport pick-up, email us at info@longstreetbackpackers.co.za</H5>
         </div>
       </div>
     </div>
     <!-- END LOCATION -->
 
-    <q-parallax src="/statics/ismaller.png" :height=windowHeight>
+    <q-parallax src="statics/images/party_courtyard.jpeg" :height=windowHeight>
     </q-parallax>
 
     <!-- FACILITIES -->
-    <div id="facilities" class="row q-pb-xl items-start window-width drivein">
+    <div id="facilities" class="row q-pb-xl items-start window-width driveinfilled">
       <div class="row col-12">
         <div class="row col-12 justify-center">
           <H2  class="drivein"> FACILITIES </H2>
         </div>
         <div class="row col-12 q-pt-lg">
           <div class="col-xl-5 col-md-4 fill2">
-            <img src="/statics/bar.jpeg"></img>
+            <img src="statics/images/bar.jpeg"></img>
           </div>
 
           <div class="row col-xl-7 col-md-8 q-pl-xl q-pt-lg text-center">
@@ -128,27 +123,27 @@
             </div>
             <div class="col-4 row justify-center items-center">
               <img width="30%" src="statics/icons/004-suitcase.png"/>
-              <div class="col-12">Luggage Storage</div>
+              <div class="col-12">Luggage storage</div>
             </div>
             <div class="col-4 row justify-center items-center">
               <img width="30%" src="statics/icons/005-wifi.png"/>
               <div class="col-12">Fibre-speed Wifi</div>
             </div>
             <div class="col-4 row justify-center items-center">
-              <img width="30%" src="statics/icons/006-credit-card.png"/>
-              <div class="col-12">2 x Balconies for the flaneur</div>
+              <img width="30%" src="statics/icons/002-window.png"/>
+              <div class="col-12">2 large balconies</div>
             </div>
             <div class="col-4 row justify-center items-center">
-              <img width="30%" src="statics/icons/007-bus.png"/>
+              <img width="30%" src="statics/icons/001-leaf.png"/>
               <div class="col-12">Lush courtyard oasis</div>
             </div>
             <div class="col-4 row justify-center items-center">
               <img width="30%" src="statics/icons/008-stove.png"/>
-              <div class="col-12">Large communal Kitchen</div>
+              <div class="col-12">Large communal kitchen</div>
             </div>
             <div class="col-4 row justify-center items-center">
-              <img width="30%" src="statics/icons/009-holiday.png"/>
-              <div class="col-12">The friendliest hostel in Cape Town!</div>
+              <img width="30%" src="statics/icons/005-dancing.png"/>
+              <div class="col-12">Daily group activities</div>
             </div>
           </div>
         </div>
@@ -156,7 +151,7 @@
     </div>
     <!-- END FACILITIES -->
 
-    <q-parallax src="/statics/balcony evening.jpeg.png" :height=windowHeight class="q-mt-xl">
+    <q-parallax src="statics/images/leafy courtyard.jpg" :height=windowHeight class="q-mt-xl">
     </q-parallax>
 
     <!-- ROOMS -->
@@ -167,56 +162,56 @@
             <H2 class="drivein q-mb-md"> ROOMS </H2>
           </div>
         </div>
-        <div class="col-12 q-pb-sm">
-        All guests must produce a valid <b>passport</b> on check in. Including South Africans.
+        <div class="col-12 q-pb-sm driveinfilled">
+        Please note that <b>all</b> guests <b>must</b> produce a valid passport upon check-in. No exceptions.
         </div>
 
         <q-card class="col-sm-4 q-pa-sm ">
           <q-card-media class="fill3">
-            <img src="/statics/rooms/single/single1.jpeg">
+            <img src="statics/images/single1.jpeg">
           </q-card-media>
           <q-card-title>
-            Single Room
+            Single &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-sm-4 q-pa-sm">
           <q-card-media class="fill3">
-            <img src="/statics/rooms/twin/twin1.jpg">
+            <img src="statics/images/twin1.jpg">
           </q-card-media>
           <q-card-title>
-            Twin Room
+            Twin &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-sm-4 q-pa-sm">
           <q-card-media class="fill3">
-            <img src="/statics/rooms/dorm_14/dorm_14_1.jpg">
+            <img src="statics/images/double.jpg">
           </q-card-media>
           <q-card-title>
-            Double Room
+            Double &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-sm-4 q-pa-sm">
           <q-card-media class="fill3">
-            <img src="/statics/rooms/dorm_15/dorm_15_1.jpg">
+            <img src="statics/images/dorm_15_1.jpg">
           </q-card-media>
           <q-card-title>
-            4 Bed Dorm
+            4 &nbsp; Bed &nbsp; Dorm
           </q-card-title>
         </q-card>
         <q-card class="col-sm-4 q-pa-sm">
           <q-card-media class="fill3">
-            <img src="/statics/rooms/16first/16first1.jpg">
+            <img src="statics/images/16first1.jpg">
           </q-card-media>
           <q-card-title>
-            6 Bed Room
+            6 &nbsp; Bed &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-sm-4 q-pa-sm">
           <q-card-media class="fill3">
-            <img src="/statics/rooms/16second/16second1.jpg">
+            <img src="statics/images/16second1.jpg">
           </q-card-media>
           <q-card-title>
-            10 Bed Room
+            10 &nbsp; Bed &nbsp; Room
           </q-card-title>
         </q-card>
       </div>
@@ -232,7 +227,7 @@
       </div>
     </div>
 
-    <q-parallax src="statics/bar.jpeg.png" :height=windowHeight class="q-pt-xl">
+    <q-parallax src="statics/images/braai1.jpg" :height=windowHeight class="q-pt-xl">
 
     </q-parallax>
 
@@ -244,7 +239,7 @@
       </div>
     </div>
 
-    <q-parallax src="statics/braai courtyard.jpeg.png" :height=windowHeight>
+    <q-parallax src="statics/images/braai courtyard.jpg" :height=windowHeight>
     </q-parallax>
 
     <div class="row window-width items-center bg-black text-white window-height">
@@ -255,7 +250,7 @@
       </div>
     </div>
 
-    <q-parallax src="statics/Beer Pong 2.jpg.png" :height=windowHeight>
+    <q-parallax src="statics/images/Beer Pong 2.jpg" :height=windowHeight>
     </q-parallax>
 
     <div class="row window-width items-center window-height">
@@ -266,7 +261,7 @@
       </div>
     </div>
 
-    <q-parallax src="statics/ismaller.png" :height=windowHeight>
+    <q-parallax src="statics/images/chickenstairs.jpg" :height=windowHeight>
     </q-parallax>
 
     <div class="row window-width items-center bg-black text-white window-height">
@@ -279,15 +274,22 @@
     <!-- END REVIEWS -->
 
     <!-- CONTACT US -->
-    <div class="row window-width items-center  driveinfilled">
+    <div class="row window-width" id="contactus">
       <div class="col-1"></div>
-      <div class="col-8 q-pl-xl q-pb-xl">
-        <H6>Contact Us</H6>
+      <div class="col-8 q-pl-xl q-pb-xl driveinfilled">
+        <H6 class=" drivein">Contact Us</H6>
         <p> Phone : +27 (0) 21 423 0615 </p>
         <p> Email : info@longstreetbackpackers.co.za </p>
         <p> 209 Long street, Cape Town </p>
       </div>
-      <div style="height : 100"></div>
+      <div class="row col-2 items-end q-pb-xl q-pl-lg">
+        <div>
+          <a href="https://www.facebook.com/longstreetbackpackers/"> <img  width="40" src="statics/facebook.png"/></a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/longstreetbackpackers/"> <img class="q-ml-sm" width="40" src="statics/instagram.png"/> </a>
+        </div>
+      </div>
     </div>
 
     <!-- END CONTACT US -->

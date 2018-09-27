@@ -2,8 +2,8 @@
   <div>
     <q-layout v-if='desktop' view="hhh lpr FFF">
       <q-layout-header reveal :reveal-offset="windowHeight + 150" class="bg-white" >
-        <div class="drivein row q-mx-lg" ref="header">
-          <div class="col-2 q-pa-md">
+        <div class="drivein row q-pr-lg" ref="header">
+          <div class="col-2 q-pa-sm">
             <img src='statics/logo.png'>
           </div>
           <div class="row col-10">
@@ -38,36 +38,30 @@
           <div v-if="windowHeight - windowScroll < headerHeight * 2" class="col-md-12 col-lg-6 row items-end justify-end">
             <q-btn color="dark" flat label="Facilities"
              @click="scrollToElement('facilities')"
-            size="xl" class="q-pb-md"
-            @mouseenter.native="facilities = true"
-            @mouseleave.native="facilities = false"/>
+            size="xl" class="q-pb-md"/>
             <q-btn color="dark" flat label="Location"
             @click="scrollToElement('location')"
-            size="xl" class="q-pb-md"
-            @mouseenter.native="location = true"
-            @mouseleave.native="location = false"/>
+            size="xl" class="q-pb-md"/>
             <q-btn color="dark" flat label="Rooms"
             @click="scrollToElement('rooms')"
-            size="xl" class="q-pb-md"
-            @mouseenter.native="rooms = true"
-            @mouseleave.native="rooms = false"/>
+            size="xl" class="q-pb-md"/>
+            <q-btn color="dark" flat label="Contact Us"
+            @click="scrollToElement('contactus')"
+            size="xl" class="q-pb-md"/>
           </div>
           <div v-else class="col-12 row items-end justify-end">
             <q-btn color="dark" flat label="Facilities"
              @click="scrollToElement('facilities')"
-            size="xl" class="q-pb-md"
-            @mouseenter.native="facilities = true"
-            @mouseleave.native="facilities = false"/>
+            size="xl" class="q-pb-md"/>
             <q-btn color="dark" flat label="Location"
             @click="scrollToElement('location')"
-            size="xl" class="q-pb-md"
-            @mouseenter.native="location = true"
-            @mouseleave.native="location = false"/>
+            size="xl" class="q-pb-md"/>
             <q-btn color="dark" flat label="Rooms"
             @click="scrollToElement('rooms')"
-            size="xl" class="q-pb-md"
-            @mouseenter.native="rooms = true"
-            @mouseleave.native="rooms = false"/>
+            size="xl" class="q-pb-md"/>
+            <q-btn color="dark" flat label="Contact Us"
+            @click="scrollToElement('contactus')"
+            size="xl" class="q-pb-md"/>
           </div>
           </div>
         </div>
@@ -91,7 +85,7 @@
     </q-layout>
     <q-layout v-else view="hhh lpr fFf">
       <q-layout-header reveal :reveal-offset="150" class="bg-white" >
-        <div class="driveinfilled row" ref="header">
+        <div class="drivein row" ref="header">
           <div class="col-9 q-pl-sm q-py-sm">
             <img src='statics/logo.png'>
           </div>
@@ -99,20 +93,25 @@
             <q-btn flat icon="menu" class="driveinfilled">
               <q-popover>
                 <q-list separator link class="q-py-none">
-                  <q-item v-close-overlay @click.native="doSomething">
+                  <q-item v-close-overlay>
                     <q-btn color="dark" flat label="Facilities"
                         @click="scrollToElement('facilities')"
-                        size="md" class="driveinfilled"/>
+                        size="lg" class="drivein"/>
                   </q-item>
-                  <q-item v-close-overlay @click.native="doSomething">
+                  <q-item v-close-overlay>
                         <q-btn color="dark" flat label="Location"
                         @click="scrollToElement('location')"
-                        size="md" class="driveinfilled"/>
+                        size="lg" class="drivein"/>
                   </q-item>
-                   <q-item v-close-overlay @click.native="doSomething">
+                   <q-item v-close-overlay>
                         <q-btn color="dark" flat label="Rooms"
                         @click="scrollToElement('rooms')"
-                        size="md" class="driveinfilled"/>
+                        size="lg" class="drivein"/>
+                  </q-item>
+                  <q-item v-close-overlay>
+                    <q-btn color="dark" flat no-wrap label="Contact Us"
+                    @click="scrollToElement('contactus')"
+                    size="lg" class="drivein"/>
                   </q-item>
                 </q-list>
               </q-popover>
@@ -125,10 +124,13 @@
         <router-view :d='date' :d2='dateTo' @d='setDate' @d2='setDateTo'/>
       </q-page-container>
 
-      <q-layout-footer class="bg-white driveinfilled" style="opacity:0.7" reveal :reveal-offset="150">
-        <div v-if="windowScroll < windowHeight/3" class="row justify-end bg-red">
+      <q-layout-footer class="bg-white drivein" style="opacity:0.7" reveal :reveal-offset="150">
+        <div v-if="windowScroll < windowHeight/3" class="row justify-end q-py-sm bg-red">
+        <div class="col-8"></div>
+        <div class="col-4 row justify-center q-pr-lg">
           <b>BOOK NOW</b>
-          <q-icon name="arrow_downward" class="q-pr-lg"/>
+          <q-icon name="arrow_downward"/>
+        </div>
         </div>
         <form id="check_availability q-ma-md" action="https://hotels.cloudbeds.com/reservation/A9p5sR" method="post">
           <div class="container row justify-around">
@@ -150,8 +152,8 @@
                 <p><b>No other form of ID will be accepted</b></p></span>
 
               <template slot="buttons" slot-scope="props">
-                <q-btn color="black"><label for="book">Continue Booking</label></q-btn>
-                <q-btn color="white" class="text-black" label="Cancel" @click="props.cancel" />
+                <q-btn color="black" class="driveinfilled"><label for="book">Continue Booking</label></q-btn>
+                <q-btn color="white" class="text-black driveinfilled" label="Cancel" @click="props.cancel" />
               </template>
             </q-dialog>
           </div>

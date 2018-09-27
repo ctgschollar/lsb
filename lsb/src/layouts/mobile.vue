@@ -66,18 +66,18 @@
     <!-- END LOCATION LANDSCAPE -->
 
     <!-- LOCATION PORTRAIT -->
-    <div class="row window-width orientation-portrait items-stretch bg-black text-white">
+    <div class="row window-width orientation-portrait items-stretch bg-black text-white driveinfilled">
       <div class="row text-center">
         <div class="col-12">
           <H2 class="row drivein justify-center q-mb-none"> LOCATION </H2>
         </div>
         <div class="col-12">
-          <H4 class="driveinfilled q-mb-none"> 209 Long Street, Cape Town</H4>
+          <H4 class="q-mb-none"> 209 Long Street, Cape Town</H4>
         </div>
-        <div class="col-12 driveinfilled ">
+        <div class="col-12">
           <H4 class="q-mb-none"> {{location}}</H4>
         </div>
-        <div class="col-12 row q-my-none items-center driveinfilled">
+        <div class="col-12 row q-my-none items-center">
           <H4 class="col-12"> Walking distance from</H4>
           <H5 class="col-6 q-ma-none q-pl-md"> Table Mountain </H5>
           <H5 class="col-6 q-ma-none q-pl-md"> Bars & Pubs </H5>
@@ -88,7 +88,7 @@
           <H5 class="col-6 q-ma-none q-pl-md"> Yoga Studios </H5>
           <H5 class="col-6 q-ma-none q-pl-md"> Galleries </H5>
         </div>
-        <div class="row col-12 justify-center text-center driveinfilled">
+        <div class="row col-12 justify-center text-center">
           <H5>If you’d like to arrange an airport pick-up, email us at info@longstreetbackpackers.co.za</H5>
         </div>
       </div>
@@ -144,7 +144,7 @@
           </div>
           <div class="col-4 row justify-center items-center">
             <img width="30%" src="statics/icons/006-credit-card.png"/>
-            <div class="col-12">2 x Balconies for the flaneur</div>
+            <div class="col-12">2 large balconies</div>
           </div>
           <div class="col-4 row justify-center items-center">
             <img width="30%" src="statics/icons/007-bus.png"/>
@@ -156,7 +156,7 @@
           </div>
           <div class="col-4 row justify-center items-center">
             <img width="30%" src="statics/icons/009-holiday.png"/>
-            <div class="col-12">The friendliest hostel in Cape Town!</div>
+            <div class="col-12">Daily group activities</div>
           </div>
           </div>
         </div>
@@ -184,7 +184,7 @@
         </div>
         <div class="col-4 row justify-center items-center">
           <img width="30%" src="statics/icons/004-suitcase.png"/>
-          <div class="col-12">Luggage Storage</div>
+          <div class="col-12">Luggage storage</div>
         </div>
         <div class="col-4 row justify-center items-center">
           <img width="30%" src="statics/icons/005-wifi.png"/>
@@ -192,7 +192,7 @@
         </div>
         <div class="col-4 row justify-center items-center">
           <img width="30%" src="statics/icons/006-credit-card.png"/>
-          <div class="col-12">2 x Balconies for the flaneur</div>
+          <div class="col-12">2 large balconies</div>
         </div>
         <div class="col-4 row justify-center items-center">
           <img width="30%" src="statics/icons/007-bus.png"/>
@@ -200,11 +200,11 @@
         </div>
         <div class="col-4 row justify-center items-center">
           <img width="30%" src="statics/icons/008-stove.png"/>
-          <div class="col-12">Large communal Kitchen</div>
+          <div class="col-12">Large communal kitchen</div>
         </div>
         <div class="col-4 row justify-center items-center">
           <img width="30%" src="statics/icons/009-holiday.png"/>
-          <div class="col-12">The friendliest hostel in Cape Town!</div>
+          <div class="col-12">Daily group activities</div>
         </div>
         </div>
         <div class="col-12 q-pt-lg">
@@ -215,7 +215,7 @@
     <!-- END FACILITIES PORTRAIT-->
     </div>
 
-    <q-parallax src="/statics/leafy_courtyard.png" :height=300 class="q-mt-xl orientation-landscape">
+    <q-parallax src="/statics/leafy_courtyard.png" :height=300 class="q-mt-xl orientation-landscape drivein">
     </q-parallax>
 
     <div id="rooms">
@@ -234,8 +234,8 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/single/single1.jpeg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            Single Room
+          <q-card-title>
+            Single &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-4 q-pa-sm">
@@ -243,39 +243,39 @@
             <img src="/statics/rooms/twin/twin1.jpg">
           </q-card-media>
           <q-card-title class="driveinfilled">
-            Twin Room
+            Twin &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-4 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/dorm_14/dorm_14_1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            Double Room
+          <q-card-title >
+            Double &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-4 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/dorm_15/dorm_15_1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            4 Bed Dorm
+          <q-card-title>
+            4 &nbsp; Bed &nbsp; Dorm
           </q-card-title>
         </q-card>
         <q-card class="col-4 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/16first/16first1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            6 Bed Room
+          <q-card-title>
+            6 &nbsp; Bed &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-4 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/16second/16second1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            10 Bed Room
+          <q-card-title>
+            10 &nbsp; Bed &nbsp; Room
           </q-card-title>
         </q-card>
       </div>
@@ -283,7 +283,7 @@
     <!-- END ROOMS LANDSCAPE -->
 
     <!-- ROOMS PORTRAIT-->
-    <div id="rooms" class="row justify-center q-pb-lg  orientation-portrait">
+    <div id="rooms" class="row justify-center q-pb-lg  orientation-portrait drivein">
       <div class="row col-12">
         <div class="row col-12 justify-center">
           <div class="drivein ">
@@ -297,48 +297,48 @@
           <q-card-media class="fill3">
             <img src="/statics/rooms/single/single1.jpeg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            Single Room
+          <q-card-title>
+            Single &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-6 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/twin/twin1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            Twin Room
+          <q-card-title>
+            Twin &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-6 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/dorm_14/dorm_14_1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            Double Room
+          <q-card-title>
+            Double &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-6 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/dorm_15/dorm_15_1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            4 Bed Dorm
+          <q-card-title>
+            4 &nbsp; Bed &nbsp; Dorm
           </q-card-title>
         </q-card>
         <q-card class="col-6 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/16first/16first1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            6 Bed Room
+          <q-card-title>
+            6 &nbsp; Bed &nbsp; Room
           </q-card-title>
         </q-card>
         <q-card class="col-6 q-pa-sm">
           <q-card-media class="fill3">
             <img src="/statics/rooms/16second/16second1.jpg">
           </q-card-media>
-          <q-card-title class="driveinfilled">
-            10 Bed Room
+          <q-card-title>
+            10 &nbsp; Bed &nbsp; Room
           </q-card-title>
         </q-card>
       </div>
@@ -402,14 +402,31 @@
     <!-- END REVIEWS -->
 
     <!-- CONTACT US -->
-    <div class="row window-width items-center  driveinfilled">
+    <div class="row window-width driveinfilled" id="contactus">
       <div class="col-8 q-pl-xl q-pb-xl">
         <H4 class="drivein">Contact Us</H4>
-        <p> +27 (0) 21 423 0615 </p>
-        <p> info@longstreetbackpackers.co.za </p>
+        <p> <a href="tel:+27214230615">+27 (0) 21 423 0615</a> </p>
+        <p> <a href="mailto:info@longstreetbackpackers.co.za"> info@longstreetbackpackers.co.za </a> </p>
         <p> 209 Long street, Cape Town </p>
       </div>
-      <div style="height : 100"></div>
+      <div class="row col-4 q-pt-lg orientation-portrait">
+        <div class="col-5">
+          <a href="https://www.facebook.com/longstreetbackpackers/"> <img  width="80%" src="statics/facebook.png"/></a>
+        </div>
+        <div class="col-5">
+          <a href="https://www.instagram.com/longstreetbackpackers/"> <img width="80%" src="statics/instagram.png"/> </a>
+        </div>
+      </div>
+      <div class="row col-4 q-pt-lg orientation-landscape">
+        <div class="col-5">
+        </div>
+        <div class="col-3">
+          <a href="https://www.facebook.com/longstreetbackpackers/"> <img  width="70%" src="statics/facebook.png"/></a>
+        </div>
+        <div class="col-3">
+          <a href="https://www.instagram.com/longstreetbackpackers/"> <img width="70%" src="statics/instagram.png"/> </a>
+        </div>
+      </div>
     </div>
 
     <!-- END CONTACT US -->
